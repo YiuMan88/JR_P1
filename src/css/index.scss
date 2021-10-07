@@ -1,0 +1,183 @@
+$font-color:#ea6f5a;
+$text-color:#b4b4b4;
+
+body {
+    padding: 0;
+    margin: 0;
+    color: #333;
+    background-color: #fff;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+@mixin textWrapper($line) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+}
+
+%headerBtn {
+    line-height: 40px;
+    margin-top: 14px;
+    padding: 6px 30px;
+    border-radius: 25px;
+    height: 40px;
+}
+
+.header {
+    background-color: #fff;
+    display: flex;
+    height: 80px;
+    line-height: 80px;
+    justify-content: space-around;
+    border-bottom: 1px solid #f5efef;
+    color: #969696;
+
+    &__logo {
+        text-align: center;
+        flex-basis: 50%;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-around;
+        flex-basis: 50%;
+
+        .item {
+            &.selected {
+                color: $font-color;
+            }
+        }
+
+
+        .register {
+            color: $font-color;
+            border: 1px solid $font-color;
+            @extend %headerBtn
+        }
+
+        .write {
+            background-color: $font-color;
+            height: 40px;
+            color: white;
+            @extend %headerBtn
+        }
+    }
+
+}
+
+.NewsBody {
+    padding-top: 30px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+
+    &__left {
+        flex-basis: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 20px;
+        position: relative;
+
+        .tab {
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            border-bottom: 1px solid #f5efef;
+            font-weight: 500;
+            color: $text-color;
+
+            .tabItem {
+                cursor: pointer;
+                margin-right: 15px;
+                height: 100%;
+
+                &:hover {
+                    background-color: #333;
+                }
+            }
+
+        }
+
+        .story {
+            width: 100%;
+
+            >section {
+                display: none;
+            }
+
+            .display {
+                display: block;
+            }
+
+            .NewsContainer {
+
+                border-bottom: 1px solid #f5efef;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 25px 0;
+
+                &__info {
+                    position: relative;
+                    width: 100%;
+                    padding-right: 30px;
+
+                    .userDetail {
+                        position: absolute;
+                        display: flex;
+                        bottom: 0;
+                        color: $text-color;
+                        width: 100%;
+
+                        &:not(:first-child) {
+                            gap: 10px;
+                        }
+                    }
+
+                    p {
+                        @include textWrapper(3);
+                        color: $text-color;
+                    }
+                }
+
+                &__img {
+                    border-radius: 10px;
+                    overflow: hidden;
+                    background-color: #333;
+                    width: 40%;
+                    text-align: center;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__right {
+        flex-basis: 40%;
+        background-color: rgb(148, 139, 140);
+    }
+}
