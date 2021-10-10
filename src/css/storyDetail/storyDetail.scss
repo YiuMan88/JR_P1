@@ -1,0 +1,57 @@
+.articleContainer {
+	height: 100%;
+	background-color: #f9f9f9;
+	display: flex;
+	min-height: 92.5vh;
+
+	&__action {
+		top: 300px;
+		flex-basis: 20%;
+		display: flex;
+		justify-content: center;
+		.likes {
+			cursor: pointer;
+			top: 300px;
+			position: fixed;
+			height: 50px;
+			width: 50px;
+			background-color: white;
+			border-radius: 50%;
+			img {
+				margin: 5px 0 0 10px;
+				text-align: center;
+				width: 70%;
+				height: 70%;
+			}
+		}
+	}
+	&__article {
+		flex-basis: 50%;
+		background-color: white;
+		margin: 50px;
+		padding: 25px;
+		.author {
+			display: flex;
+			&__aviator {
+				height: 50px;
+				width: 50px;
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			&__infor {
+				margin-left: 10px;
+				.name {
+					font-size: 1.5rem;
+				}
+				.details {
+					color: #b4b4b4;
+				}
+			}
+		}
+		p {
+			font-size: 1.3rem;
+		}
+	}
+}

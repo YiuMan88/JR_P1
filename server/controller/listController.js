@@ -44,9 +44,20 @@ const post_story = async postData => {
 	})
 	return posting
 }
+const get_specificStory = async story_id => {
+	const result = new Promise((reslove, reject) => {
+		connection.query(`call get_sepecific_story(?);`, [story_id], (err, res, field) => {
+			reslove(res)
+		})
+	}).then(res => {
+		return res
+	})
+	return result
+}
 
 module.exports = {
 	list_data,
 	user_story,
-	post_story
+	post_story,
+	get_specificStory
 }

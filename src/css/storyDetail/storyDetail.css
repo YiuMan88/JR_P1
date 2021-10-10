@@ -1,0 +1,78 @@
+.articleContainer {
+  height: 100%;
+  background-color: #f9f9f9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 92.5vh;
+}
+
+.articleContainer__action {
+  top: 300px;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.articleContainer__action .likes {
+  cursor: pointer;
+  top: 300px;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.articleContainer__action .likes img {
+  margin: 5px 0 0 10px;
+  text-align: center;
+  width: 70%;
+  height: 70%;
+}
+
+.articleContainer__article {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  background-color: white;
+  margin: 50px;
+  padding: 25px;
+}
+
+.articleContainer__article .author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.articleContainer__article .author__aviator {
+  height: 50px;
+  width: 50px;
+}
+
+.articleContainer__article .author__aviator img {
+  width: 100%;
+  height: 100%;
+}
+
+.articleContainer__article .author__infor {
+  margin-left: 10px;
+}
+
+.articleContainer__article .author__infor .name {
+  font-size: 1.5rem;
+}
+
+.articleContainer__article .author__infor .details {
+  color: #b4b4b4;
+}
+
+.articleContainer__article p {
+  font-size: 1.3rem;
+}
+/*# sourceMappingURL=storyDetail.css.map */

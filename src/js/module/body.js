@@ -1,5 +1,5 @@
 const isEmpty = require('lodash/isEmpty')
-
+const Create = require('../utilities/createElement')
 export default class Newbody {
 	constructor(el, allStoryData, userStoryData) {
 		this.listData = allStoryData
@@ -13,8 +13,8 @@ export default class Newbody {
 		this.renderList()
 	}
 	renderList() {
-		const allStoryDiv = this.storyCreating(this.listData)
-		const userStoryDiv = this.storyCreating(this.userStory)
+		const allStoryDiv = Create.storyElement(this.listData)
+		const userStoryDiv = Create.storyElement(this.userStory)
 		this.allStoryRendering(allStoryDiv)
 		this.userStoryRendering(userStoryDiv)
 	}
@@ -50,19 +50,19 @@ export default class Newbody {
 			newsInfor.setAttribute('class', 'NewsContainer__info')
 
 			let inforTitle = document.createElement('h3')
-			inforTitle.innerHTML = this.listData[i]['title']
+			inforTitle.innerHTML = data[i]['title']
 
 			let inforContent = document.createElement('p')
-			inforContent.innerHTML = this.listData[i]['content']
+			inforContent.innerHTML = data[i]['content']
 
 			let userDetail = document.createElement('div')
 			userDetail.setAttribute('class', 'userDetail')
 
 			let likes = document.createElement('div')
-			likes.innerHTML = this.listData[i]['likes']
+			likes.innerHTML = data[i]['likes']
 
 			let author = document.createElement('div')
-			author.innerHTML = this.listData[i]['author']
+			author.innerHTML = data[i]['author']
 
 			let imgContainer = document.createElement('div')
 			imgContainer.setAttribute('class', 'NewsContainer__img')

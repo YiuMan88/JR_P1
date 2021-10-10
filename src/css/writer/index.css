@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.editor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  min-height: 100vh;
+}
+
+.editor__back {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  background-color: #494646;
+  position: relative;
+}
+
+.editor__back .homeBtn {
+  cursor: pointer;
+  position: fixed;
+  top: 43%;
+  left: 150px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  color: white;
+}
+
+.editor__back .homeBtn img {
+  width: 100%;
+  height: 100%;
+}
+
+.editor__form {
+  overflow: hidden;
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+}
+
+.editor__form .ql-toolbar {
+  font-size: 2rem;
+  height: 62px;
+}
+
+.editor__form__action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.editor__form__action .title {
+  padding-left: 10px;
+  font-size: 2rem;
+  height: 60px;
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+  border: none;
+  outline: none;
+}
+
+.editor__form__action .submit {
+  height: 62px;
+  line-height: 62px;
+  text-align: center;
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+  color: white;
+  background-color: #494646;
+  cursor: pointer;
+}
+/*# sourceMappingURL=index.css.map */

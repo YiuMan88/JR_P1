@@ -7,6 +7,11 @@ export const getListData = async () => {
 	return result
 }
 
+export const getSpecificStory = async story_id => {
+	const result = axios.get(`http://localhost:3001/api/list/search/${story_id}`)
+	return result
+}
+
 export const Logincheck = async loginDetail => {
 	const result = axios.post('http://localhost:3001/api/login', null, {
 		params: loginDetail,

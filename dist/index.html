@@ -11,16 +11,19 @@
 </head>
 
 <body>
-  <div class="header">
-    <div class="header__logo">s</div>
+  <header class="header">
+    <div class="header__logo">
+      <img src="../src/asset/logo.svg" />
+    </div>
     <div class="header__nav">
       <a class="item selected">Home</a>
       <a href="./login.html" action="login" class="item login">Login</a>
       <a href="./register.html" class="item btn register">Register</a>
       <a action="write" class="item btn write">Write</a>
     </div>
-  </div>
+  </header>
   <div class="NewsBody">
+
     <div class="NewsBody__left">
       <div class="tab">
         <span class="tabItem">All storys</span>
@@ -28,18 +31,85 @@
       </div>
       <div class="story">
         <section id="allStorys" class="display">
-
         </section>
-        <!-- ======================= -->
         <section id="myStory"></section>
       </div>
-
-
-
-
     </div>
     <div class="NewsBody__right">
+      <section class="trending">
+        <div class="trending__title">Top 5 authors</div>
+        <div class="trending__body">
 
+          <div class="author">
+            <div class="author__aviator">
+              <img src="../src/asset/aviator.svg">
+            </div>
+            <div class="author__details">
+              <div class="name">name</div>
+              <div class="totalLikes">
+                total likes
+              </div>
+            </div>
+          </div>
+
+
+          <div class="author">
+            <div class="author__aviator">
+              <img src="../src/asset/aviator2.svg">
+            </div>
+            <div class="author__details">
+              <div class="name">name</div>
+              <div class="totalLikes">
+                total likes
+              </div>
+            </div>
+          </div>
+
+
+          <div class="author">
+            <div class="author__aviator">
+              <img src="../src/asset/aviator3.svg">
+            </div>
+            <div class="author__details">
+              <div class="name">name</div>
+              <div class="totalLikes">
+                total likes
+              </div>
+            </div>
+          </div>
+
+          <div class="author">
+            <div class="author__aviator">
+              <img src="../src/asset/aviator4.svg">
+            </div>
+            <div class="author__details">
+              <div class="name">name</div>
+              <div class="totalLikes">
+                total likes
+              </div>
+            </div>
+          </div>
+
+          <div class="author">
+            <div class="author__aviator">
+              <img src="../src/asset/aviator5.svg">
+            </div>
+            <div class="author__details">
+              <div class="name">name</div>
+              <div class="totalLikes">
+                total likes
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </section>
+      <div class="advertising">
+        <img src="../src/asset/advertising.png" />
+      </div>
     </div>
   </div>
   <script type="text/javascript" src="./js/main.js"></script>
