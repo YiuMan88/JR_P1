@@ -55,22 +55,42 @@ a {
   display: flex;
   height: 80px;
   line-height: 80px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   border-bottom: 1px solid #f5efef;
   color: #969696;
+  position: relative;
 }
 
 .header__logo {
   cursor: pointer;
   text-align: center;
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  margin-left: 5%;
 }
 
 .header__logo img {
   width: 100%;
   height: 100%;
+}
+
+.header__menu {
+  display: none;
+  height: 30px;
+  width: 30px;
+  margin-right: 15px;
+  margin-top: 12px;
+}
+
+.header__menu img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 769px) {
+  .header__menu {
+    display: block;
+  }
 }
 
 .header__nav {
@@ -79,13 +99,38 @@ a {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  width: 30%;
   cursor: pointer;
+}
+
+@media screen and (max-width: 769px) {
+  .header__nav {
+    position: absolute;
+    text-align: center;
+    top: 81px;
+    right: 30px;
+    background-color: #f9f9f9;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90px;
+    z-index: 1000;
+    display: none;
+    padding: 0 10px 20px 10px;
+  }
 }
 
 .header__nav .item.selected {
   color: #ea6f5a;
+}
+
+@media screen and (max-width: 769px) {
+  .header__nav .item {
+    padding: 0;
+    text-align: center;
+    display: block;
+  }
 }
 
 .header__nav .register {
@@ -112,6 +157,19 @@ a {
           flex-direction: row;
 }
 
+@media screen and (min-width: 767px) and (max-width: 1025px) {
+  .NewsBody {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .NewsBody {
+    padding-top: 0;
+    width: 90%;
+  }
+}
+
 .NewsBody__left {
   -ms-flex-preferred-size: 70%;
       flex-basis: 70%;
@@ -124,6 +182,19 @@ a {
           flex-direction: column;
   margin-right: 50px;
   position: relative;
+}
+
+@media screen and (max-width: 769px) {
+  .NewsBody__left {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .NewsBody__left {
+    margin-right: 0;
+  }
 }
 
 .NewsBody__left .tab {
@@ -173,6 +244,12 @@ a {
   padding: 25px 0;
 }
 
+@media screen and (max-width: 426px) {
+  .NewsBody__left .story .NewsContainer {
+    height: 100px;
+  }
+}
+
 .NewsBody__left .story .NewsContainer__info {
   position: relative;
   width: 100%;
@@ -196,13 +273,25 @@ a {
 }
 
 .NewsBody__left .story .NewsContainer__info .userDetail img {
-  margin-top: 2px;
+  margin-top: 4px;
   height: 18px;
   width: 18px;
 }
 
+@media screen and (max-width: 426px) {
+  .NewsBody__left .story .NewsContainer__info .userDetail img {
+    margin-top: -2px;
+  }
+}
+
 .NewsBody__left .story .NewsContainer__info .userDetail:not(:first-child) {
   gap: 10px;
+}
+
+.NewsBody__left .story .NewsContainer__info .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .NewsBody__left .story .NewsContainer__info p {
@@ -215,12 +304,28 @@ a {
   color: #b4b4b4;
 }
 
+@media screen and (max-width: 1441px) {
+  .NewsBody__left .story .NewsContainer__info p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
+
 .NewsBody__left .story .NewsContainer__img {
   border-radius: 10px;
   overflow: hidden;
   background-color: #333;
   width: 40%;
   text-align: center;
+}
+
+@media screen and (max-width: 426px) {
+  .NewsBody__left .story .NewsContainer__img {
+    width: 58%;
+  }
 }
 
 .NewsBody__left .story .NewsContainer__img img {
@@ -231,6 +336,12 @@ a {
 .NewsBody__right {
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
+}
+
+@media screen and (max-width: 769px) {
+  .NewsBody__right {
+    display: none;
+  }
 }
 
 .NewsBody__right .trending__title {
@@ -269,6 +380,13 @@ a {
   width: 60px;
   border-radius: 50%;
   overflow: hidden;
+}
+
+@media screen and (max-width: 769px) {
+  .NewsBody__right .trending__body .author__aviator {
+    height: 30px;
+    width: 30px;
+  }
 }
 
 .NewsBody__right .trending__body .author__aviator img {

@@ -14,7 +14,8 @@ const storyElement = data => {
 		let newsInfor = document.createElement('div')
 		newsInfor.setAttribute('class', 'NewsContainer__info')
 
-		let inforTitle = document.createElement('h3')
+		let inforTitle = document.createElement('div')
+		inforTitle.className = 'title'
 		inforTitle.innerHTML = title
 		inforTitle.addEventListener('click', () => {
 			window['filter'] = storyId
