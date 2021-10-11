@@ -1,0 +1,11 @@
+//width over 1440px
+@mixin largeDesktop {
+	@media screen and (min-width: 1440px) {
+		@content;
+	}
+}
+@mixin smallDesktop {
+	@media screen and (max-width: 1441px) {
+		@content;
+	}
+}

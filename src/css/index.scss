@@ -1,6 +1,15 @@
+@import './mixin';
 $font-color: #ea6f5a;
 $text-color: #b4b4b4;
-
+html {
+	font-size: 16px;
+	@include largeDesktop {
+		font-size: 20px;
+	}
+	@include smallDesktop {
+		font-size: 10px;
+	}
+}
 body {
 	padding: 0;
 	margin: 0;
