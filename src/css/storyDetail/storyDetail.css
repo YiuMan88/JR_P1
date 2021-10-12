@@ -8,7 +8,6 @@
 }
 
 .articleContainer__action {
-  top: 300px;
   -ms-flex-preferred-size: 20%;
       flex-basis: 20%;
   display: -webkit-box;

@@ -1,3 +1,4 @@
+@import '../mixin';
 body {
 	margin: 0;
 	padding: 0;
@@ -9,17 +10,21 @@ a {
 	display: flex;
 	flex-direction: row;
 	min-height: 100vh;
+
 	&__back {
 		flex-basis: 20%;
-		background-color: rgb(73, 70, 70);
+		background-color: rgb(105, 105, 105);
 		position: relative;
+		@include m-phone {
+			display: none;
+		}
 		.homeBtn {
 			cursor: pointer;
 			position: fixed;
 			top: 43%;
-			left: 150px;
-			width: 60px;
-			height: 60px;
+			left: 8%;
+			width: 50px;
+			height: 50px;
 			text-align: center;
 			color: white;
 			img {
@@ -31,17 +36,21 @@ a {
 	&__form {
 		overflow: hidden;
 		flex-basis: 80%;
+		@include m-phone {
+			flex-basis: 100%;
+		}
 		.ql-toolbar {
-			font-size: 2rem;
-			height: 62px;
+			display: flex;
+			flex-wrap: wrap;
 		}
 		&__action {
 			display: flex;
+			justify-content: space-between;
 			.title {
 				padding-left: 10px;
 				font-size: 2rem;
 				height: 60px;
-				flex-basis: 90%;
+				width: 70%;
 				border: none;
 				outline: none;
 			}
@@ -49,7 +58,7 @@ a {
 				height: 62px;
 				line-height: 62px;
 				text-align: center;
-				flex-basis: 10%;
+				padding: 0 16px;
 				color: white;
 				background-color: rgb(73, 70, 70);
 				cursor: pointer;

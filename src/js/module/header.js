@@ -8,14 +8,16 @@ export default class Header {
 		this.register = el.getElementsByClassName('item')[2]
 		this.write = el.getElementsByClassName('item')[3]
 		this.jwt = jwt
-		console.log(this.menu)
 	}
 	init() {
 		this.blindEvent()
 		this.isLoginCheck(this.jwt)
 	}
 	blindEvent() {
-		this.menu.addEventListener('click', this.openSubMenu.bind(this), false)
+		if (this.menu) {
+			this.menu.addEventListener('click', this.openSubMenu.bind(this), false)
+		}
+
 		for (let i = 0; i < this.item.length; i++) {
 			this.item[i].addEventListener('click', this.onClick.bind(this), false)
 		}

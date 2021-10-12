@@ -1,3 +1,4 @@
+@import '../mixin';
 .articleContainer {
 	height: 100%;
 	background-color: #f9f9f9;
@@ -5,7 +6,6 @@
 	min-height: 92.5vh;
 
 	&__action {
-		top: 300px;
 		flex-basis: 20%;
 		display: flex;
 		justify-content: center;
@@ -17,6 +17,7 @@
 			width: 50px;
 			background-color: white;
 			border-radius: 50%;
+
 			img {
 				margin: 5px 0 0 10px;
 				text-align: center;

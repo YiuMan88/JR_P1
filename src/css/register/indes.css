@@ -1,0 +1,66 @@
+html {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 769px) {
+  html {
+    font-size: 5px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+.registerForm {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 40px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 8px #e9e6e6;
+          box-shadow: 0 0 8px #e9e6e6;
+}
+
+@media screen and (max-width: 769px) {
+  .registerForm {
+    width: 60%;
+  }
+}
+
+.registerForm__userinput, .registerForm__passwordinput {
+  font-size: 1rem;
+  padding: 20px 10px;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #c8c8c8;
+  background-color: rgba(181, 181, 181, 0.1);
+  vertical-align: middle;
+  outline: none;
+}
+
+.registerForm__submit {
+  background: #42c02e;
+  color: #fff;
+  margin-top: 20px;
+  font-size: 2rem;
+  padding: 9px 0px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 25px;
+  border: none;
+}
+/*# sourceMappingURL=indes.css.map */

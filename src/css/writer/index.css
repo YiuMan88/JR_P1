@@ -21,17 +21,23 @@ a {
 .editor__back {
   -ms-flex-preferred-size: 20%;
       flex-basis: 20%;
-  background-color: #494646;
+  background-color: dimgray;
   position: relative;
+}
+
+@media screen and (max-width: 426px) {
+  .editor__back {
+    display: none;
+  }
 }
 
 .editor__back .homeBtn {
   cursor: pointer;
   position: fixed;
   top: 43%;
-  left: 150px;
-  width: 60px;
-  height: 60px;
+  left: 8%;
+  width: 50px;
+  height: 50px;
   text-align: center;
   color: white;
 }
@@ -47,23 +53,35 @@ a {
       flex-basis: 80%;
 }
 
+@media screen and (max-width: 426px) {
+  .editor__form {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
 .editor__form .ql-toolbar {
-  font-size: 2rem;
-  height: 62px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .editor__form__action {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .editor__form__action .title {
   padding-left: 10px;
   font-size: 2rem;
   height: 60px;
-  -ms-flex-preferred-size: 90%;
-      flex-basis: 90%;
+  width: 70%;
   border: none;
   outline: none;
 }
@@ -72,8 +90,7 @@ a {
   height: 62px;
   line-height: 62px;
   text-align: center;
-  -ms-flex-preferred-size: 10%;
-      flex-basis: 10%;
+  padding: 0 16px;
   color: white;
   background-color: #494646;
   cursor: pointer;

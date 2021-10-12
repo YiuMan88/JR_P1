@@ -2,8 +2,6 @@ import { Logincheck } from '../utilities/http'
 
 export default class Login {
 	constructor(el) {
-		this.name = 'loging form'
-
 		this.username = el.querySelectorAll('input')[0]
 		this.password = el.querySelectorAll('input')[1]
 		this.btn = el.querySelectorAll('button')[0]

@@ -8,6 +8,7 @@ window.addEventListener('load', async () => {
 	const header = document.getElementsByClassName('header')[0]
 	const article = document.getElementsByClassName('articleContainer')[0]
 	const jwt = window.localStorage.getItem('JWT') || null
+
 	const init = () => {
 		new Header(header, jwt).init()
 		new StoryBoard(article, data[0][0]).init()
