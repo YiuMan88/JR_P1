@@ -1,58 +1,33 @@
-const connection = require('../dataBase/dataConfig').db_connect()
-connection.connect()
+const Story_Model = require('../modal/story')
 
-const list_data = rs => {
-	connection.query('call getAllStory();', (err, rows, filed) => {
-		if (err) {
-			console.log('getUsersMethod err：' + err)
-			rs({
-				status: false
-			})
-		} else {
-			rs({
-				status: true,
-				users: rows
-			})
-		}
-	})
+const list_data = async (req, res) => {
+	const { result } = await Story_Model.getAllStory()
+	res.status(200).json({ status: true, result })
 }
 
-const user_story = async id => {
-	const get_story = new Promise((resolve, reject) => {
-		connection.query('call userStory(?);', [id], (err, result, filed) => {
-			resolve(result)
-		})
-	}).then(res => {
-		return JSON.parse(JSON.stringify(res))[0]
-	})
-	return get_story
+const user_story = async (req, res) => {
+	const { id } = req.params
+	const result = await Story_Model.findStory(id)
+	res.status(200).json({ result: result.result[0][0] })
 }
 
-const post_story = async postData => {
-	const { id, titleText, contentText } = postData
-
-	const posting = new Promise((resolve, reject) => {
-		connection.query(
-			'call postNewStory(?,?,?,?);',
-			[id, titleText, contentText, 's'],
-			(err, result, field) => {
-				resolve(result)
-			}
-		)
-	}).then(res => {
-		return res
-	})
-	return posting
+const post_story = async (req, res) => {
+	const { id, titleText, contentText } = req.query
+	try {
+		await Story_Model.addStory({ id, titleText, contentText })
+		res.status(200).json({ msg: 'successfully' })
+	} catch (err) {
+		res.status(500).json({ msg: 'internal system error' })
+	}
 }
-const get_specificStory = async story_id => {
-	const result = new Promise((reslove, reject) => {
-		connection.query(`call get_sepecific_story(?);`, [story_id], (err, res, field) => {
-			reslove(res)
-		})
-	}).then(res => {
-		return res
-	})
-	return result
+const get_specificStory = async (req, res) => {
+	const { story_id } = req.params
+	try {
+		const result = await Story_Model.findStoryById(story_id)
+		res.status(200).json({ result: result.result[0] })
+	} catch (err) {
+		res.status(500).json({ msg: 'internal system error' })
+	}
 }
 
 module.exports = {

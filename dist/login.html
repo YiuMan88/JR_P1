@@ -11,8 +11,10 @@
 
 <body>
   <div class="loginForm">
-    <input class="loginForm__userinput" placeholder="username" />
-    <input class="loginForm__passwordinput" placeholder="password" type="password" />
+    <input class="loginForm__userinput" placeholder="username" required
+      oninvalid="setCustomValidity('pleaser enter your username');" oninput="setCustomValidity('');" />
+    <input class="loginForm__passwordinput" placeholder="password" type="password" required
+      oninvalid="setCustomValidity('pleaser enter your password');" oninput="setCustomValidity('');" />
     <button class="loginForm__submit">login</button>
   </div>
   <script type="text/javascript" src="./js/login.js"></script>

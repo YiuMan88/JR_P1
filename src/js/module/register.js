@@ -13,7 +13,6 @@ export default class Register {
 	}
 
 	async onclick() {
-		console.log(123)
 		const userInfor = {
 			username: this.username.value,
 			password: this.password.value
