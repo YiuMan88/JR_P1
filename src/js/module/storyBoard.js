@@ -9,7 +9,6 @@ export default class StoryBoard {
 	}
 	init() {
 		this.bindEvent()
-		console.log(this.storyData)
 		this.storyRender()
 	}
 	bindEvent() {}

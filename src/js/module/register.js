@@ -1,4 +1,5 @@
 import { registerCheck } from '../utilities/http'
+import isEmpty from 'lodash/isEmpty'
 export default class Register {
 	constructor(el) {
 		this.username = el.querySelectorAll('input')[0]
@@ -17,11 +18,20 @@ export default class Register {
 			username: this.username.value,
 			password: this.password.value
 		}
-		const check = await this.registerCheck({
+		if (isEmpty(userInfor.username) || isEmpty(userInfor.password)) {
+			return alert('username and password required')
+		}
+		const { data } = await this.registerCheck({
 			...userInfor
 		})
-		if (check) {
-			alert('successfully')
+
+		const { status, userId, token, msg } = data
+		if (status) {
+			window.localStorage.setItem('JWT', token)
+			window.localStorage.setItem('userID', userId)
+			window.location = '/dist'
+		} else {
+			alert(msg)
 		}
 	}
 

@@ -13,19 +13,24 @@ export const getSpecificStory = async story_id => {
 }
 
 export const Logincheck = async loginDetail => {
-	const result = axios.post('http://localhost:3001/api/login', null, {
-		params: loginDetail,
-		withCredentials: true
+	return axios({
+		method: 'post',
+		url: 'http://localhost:3001/api/login',
+		withCredentials: true,
+		data: {
+			loginDetail
+		}
 	})
-	return result
 }
-
 export const registerCheck = async registerDetail => {
-	const result = axios.post('http://localhost:3001/api/register', null, {
-		params: registerDetail,
-		withCredentials: true
+	return axios({
+		method: 'post',
+		url: 'http://localhost:3001/api/register',
+		withCredentials: true,
+		data: {
+			registerDetail
+		}
 	})
-	return result
 }
 
 export const getUserStory = async user_id => {
@@ -34,10 +39,11 @@ export const getUserStory = async user_id => {
 }
 
 export const postStory = async storydata => {
-	const result = axios.post('http://localhost:3001/api/list', null, {
-		params: {
-			...storydata
+	return axios({
+		method: 'post',
+		url: 'http://localhost:3001/api/list',
+		data: {
+			storydata
 		}
 	})
-	return result
 }

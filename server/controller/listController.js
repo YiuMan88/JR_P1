@@ -8,11 +8,11 @@ const list_data = async (req, res) => {
 const user_story = async (req, res) => {
 	const { id } = req.params
 	const result = await Story_Model.findStory(id)
-	res.status(200).json({ result: result.result[0][0] })
+	res.status(200).json({ result: result.result[0] })
 }
 
 const post_story = async (req, res) => {
-	const { id, titleText, contentText } = req.query
+	const { id, titleText, contentText } = req.body.storydata
 	try {
 		await Story_Model.addStory({ id, titleText, contentText })
 		res.status(200).json({ msg: 'successfully' })

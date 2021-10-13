@@ -1,4 +1,5 @@
 import { postStory } from '../utilities/http'
+import isEmpty from 'lodash/isEmpty'
 export default class Write {
 	constructor(el) {
 		this.toolbarOptions = [
@@ -38,6 +39,10 @@ export default class Write {
 	}
 
 	async submitForm() {
+		const oriContent = this.quill.root.innerHTML.replace(/<[^>]+>/g, '')
+		if (isEmpty(oriContent) || isEmpty(this.title.value)) {
+			return alert('Title and content required')
+		}
 		const data = {
 			id: window.localStorage.getItem('userID'),
 			titleText: this.title.value,
@@ -46,6 +51,7 @@ export default class Write {
 		const { status } = await postStory(data)
 		if (status) {
 			alert('add success')
+			window.location = '../../../dist/index.html'
 		}
 	}
 }

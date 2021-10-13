@@ -14,7 +14,7 @@ window.addEventListener('load', async () => {
 
 	const init = () => {
 		new Header(header, jwt).init()
-		new Newbody(body, allStoryData.data, userStoryData.data).init()
+		new Newbody(body, allStoryData.data.result[0], userStoryData.data.result).init()
 		new TabSwitch(tabSwitch).init()
 	}
 	init()

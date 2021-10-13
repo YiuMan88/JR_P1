@@ -4,14 +4,18 @@ import { getSpecificStory } from './utilities/http'
 window.addEventListener('load', async () => {
 	let url = new URLSearchParams(window.location.search)
 	let storyId = url.get('story_id')
-	const { data } = await getSpecificStory(storyId)
 	const header = document.getElementsByClassName('header')[0]
 	const article = document.getElementsByClassName('articleContainer')[0]
 	const jwt = window.localStorage.getItem('JWT') || null
 
+	//fetching story data
+	const { data } = await getSpecificStory(storyId)
+	const storyData = data.result[0]
+
 	const init = () => {
 		new Header(header, jwt).init()
-		new StoryBoard(article, data[0][0]).init()
+		new StoryBoard(article, storyData).init()
 	}
+
 	init()
 })

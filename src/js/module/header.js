@@ -59,6 +59,7 @@ export default class Header {
 		this.write.before(loginLogo)
 		loginLogo.addEventListener('click', () => {
 			window.localStorage.removeItem('JWT')
+			window.localStorage.removeItem('userID')
 			location.reload()
 		})
 	}

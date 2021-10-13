@@ -21,13 +21,14 @@ export default class Login {
 		const { data } = await this.loginChecker({
 			...userInfor
 		})
-		console.log(data)
+		const { status, userId, token } = data
+		console.log(status)
 
-		// if (status) {
-		// 	window.localStorage.setItem('JWT', data.token)
-		// 	window.localStorage.setItem('userID', data.userID)
-		// 	window.location = '/dist'
-		// }
+		if (status) {
+			window.localStorage.setItem('JWT', token)
+			window.localStorage.setItem('userID', userId)
+			window.location = '/dist'
+		}
 	}
 
 	loginChecker(userInfor) {

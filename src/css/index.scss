@@ -220,13 +220,12 @@ a {
 						font-size: 1.2rem;
 						font-weight: bold;
 						margin-bottom: 20px;
+						@include textWrapper(1);
 					}
 					p {
 						margin-top: -15px;
-						@include smallDesktop {
-							@include textWrapper(2);
-						}
-						@include textWrapper(3);
+
+						@include textWrapper(2);
 						color: $text-color;
 					}
 				}
