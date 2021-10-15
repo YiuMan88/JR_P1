@@ -4,10 +4,10 @@ $text-color: #b4b4b4;
 html {
 	font-size: 16px;
 	@include largeDesktop {
-		font-size: 20px;
+		font-size: 14px;
 	}
 	@include smallDesktop {
-		font-size: 13px;
+		font-size: 12px;
 	}
 }
 body {
@@ -79,16 +79,31 @@ a {
 			width: 100%;
 			height: 100%;
 		}
-		@include largePhone {
+		@include mediumPhone {
+			display: block;
+		}
+		@include m-phone {
 			display: block;
 		}
 	}
 	&__nav {
 		display: flex;
 		justify-content: space-around;
-		width: 30%;
+		width: 50%;
 		cursor: pointer;
-		@include largePhone {
+		@include mediumPhone {
+			position: absolute;
+			text-align: center;
+			top: 81px;
+			right: 30px;
+			background-color: #f9f9f9;
+			flex-direction: column;
+			width: 90px;
+			z-index: 1000;
+			display: none;
+			padding: 0 10px 20px 10px;
+		}
+		@include m-phone {
 			position: absolute;
 			text-align: center;
 			top: 81px;
@@ -104,7 +119,7 @@ a {
 			&.selected {
 				color: $font-color;
 			}
-			@include largePhone {
+			@include mediumPhone {
 				padding: 0;
 				text-align: center;
 				display: block;
@@ -127,30 +142,35 @@ a {
 }
 
 .NewsBody {
-	padding-top: 30px;
 	width: 60%;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: row;
-	@include laptop {
+	@include largePhone {
 		width: 90%;
 	}
-	@include largePhone {
-		padding-top: 0;
+	@include mediumPhone {
+		width: 90%;
+	}
+	@include m-phone {
 		width: 90%;
 	}
 	&__left {
-		flex-basis: 70%;
+		width: 70%;
 		display: flex;
 		flex-direction: column;
 		margin-right: 50px;
 		position: relative;
-		@include largePhone {
-			flex-basis: 100%;
-		}
 		@include m-phone {
-			margin-right: 0;
+			margin: 0 auto;
+			width: 100%;
 		}
+		// @include largePhone {
+		// 	width: 100%;
+		// }
+		// @include m-phone {
+		// 	margin-right: 0;
+		// }
 		.tab {
 			width: 100%;
 			height: 60px;
@@ -185,16 +205,15 @@ a {
 				border-bottom: 1px solid #f5efef;
 				width: 100%;
 				display: flex;
-				justify-content: space-between;
 				padding: 25px 0;
-				@include m-phone {
-					height: 100px;
-				}
+				justify-content: flex-start;
+				// @include m-phone {
+				// 	height: 100px;
+				// }
 				&__info {
 					position: relative;
-					width: 100%;
 					padding-right: 30px;
-
+					width: 60%;
 					.userDetail {
 						position: absolute;
 						display: flex;
@@ -208,9 +227,9 @@ a {
 							margin-top: 4px;
 							height: 18px;
 							width: 18px;
-							@include m-phone {
-								margin-top: -2px;
-							}
+							// @include m-phone {
+							// 	margin-top: -2px;
+							// }
 						}
 						&:not(:first-child) {
 							gap: 10px;
@@ -224,7 +243,6 @@ a {
 					}
 					p {
 						margin-top: -15px;
-
 						@include textWrapper(2);
 						color: $text-color;
 					}
@@ -233,12 +251,9 @@ a {
 				&__img {
 					border-radius: 10px;
 					overflow: hidden;
-					background-color: #333;
+					background-color: rgb(173, 115, 115);
 					width: 40%;
 					text-align: center;
-					@include m-phone {
-						width: 58%;
-					}
 					img {
 						width: 100%;
 						height: 100%;
@@ -249,8 +264,11 @@ a {
 	}
 
 	&__right {
-		flex-basis: 30%;
-		@include largePhone {
+		width: 30%;
+		// @include largePhone {
+		// 	display: none;
+		// }
+		@include m-phone {
 			display: none;
 		}
 		.trending {
@@ -278,10 +296,10 @@ a {
 						width: 60px;
 						border-radius: 50%;
 						overflow: hidden;
-						@include largePhone {
-							height: 30px;
-							width: 30px;
-						}
+						// @include largePhone {
+						// 	height: 30px;
+						// 	width: 30px;
+						// }
 						img {
 							width: 100%;
 							height: 100%;

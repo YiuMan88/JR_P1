@@ -26,7 +26,6 @@
     </div>
   </header>
   <div class="NewsBody">
-
     <div class="NewsBody__left">
       <div class="tab">
         <span class="tabItem">All storys</span>
@@ -34,6 +33,82 @@
       </div>
       <div class="story">
         <section id="allStorys" class="display">
+
+
+          <div class="NewsContainer">
+            <div class="NewsContainer__info">
+              <div class="title">How to handle loading of images that may not exist</div>
+              <p>When you are handling millions of images on your website or mobile application, it is quite possible
+                that over a period of time, a few images may cease to exist. And when you try to deliver those images on
+                your applications, the users end up seeing a broken image like the one below.A sample page with broken
+                images as seen on Google Chrome browserDefinitely, this is not something that you would want showing up
+                on your application. There are a few ways on how you can fix this broken image problem to maintain the
+                UX standards of your application.1. Periodic data cleanupIf an image does not exist, then it should be
+                removed from the database.An image URL that is incorrect or points to an image that no longer exists, is
+                most likely a data issue. So the first thing that you can do to counter the broken image problem is to
+                periodically check all images for sanity. You would pick up a list of image URLs that have been added
+                over let’s say the last week and check if you are able to retrieve those images (a 200 OK HTTP
+                response). If yes, then the image stays in your database, else you can discard the image.Advantages
+                —&nbsp;Solves the problem at the root level. One-time effort in writing the scriptDisadvantages
+                —&nbsp;Lengthy execution times (nearly impossible) for millions of images, waste of network bandwidth
+                and cannot catch errors for the time between two consecutive runs of the cleanup task.2. Handle it in
+                your applicationIf an image does not exist, we can replace it with a new one.Another way to handle this
+                issue is by listening to the error event that gets fired when the image fails to load. In HTML, this can
+                be done with the&nbsp;onerror&nbsp;attribute of the&nbsp;&lt;img&gt;&nbsp;tag.&lt;img
+                src="http://example.com/non-existent-image.jpg"
+                onerror="this.onerror=null;this.src='http://example.com/existent-image.jpg';" /&gt;
+                If the original image fails to load, then it is replaced by the image mentioned in
+                the&nbsp;onerror&nbsp;attribute handler. Similar handling can be done in mobile apps as well.Advantages
+                —&nbsp;Can handle data issues in real-time, no need for periodic checksDisadvantages —&nbsp;Won’t work
+                for images loaded as background (at least for websites). Problems may continue in older versions of your
+                website or application that cannot be updated with the new code. Different code for different
+                platforms.3. Handle it on your image serverIf the image does not exist, then the server should not send
+                the error at all.Your image server knows if an image does not exist and sends a 404 Not Found HTTP
+                status code to the client. Instead, the server itself could replace it with a default image, correct the
+                HTTP status code and then send it to the browser or the application.Advantages—&nbsp;Works in real time
+                without any periodic checks. No handling needed on any application or any version of any application.
+                Works for all kinds of imagesDisadvantages —&nbsp;You need to build a server that can handle this
+                rerouting for you. Difficult, if not impossible, to get it working with simple image delivery setups
+                like CDN + S3 storage.4. Handle it using a third-party image server like
+                ImageKit.ioImageKit.io&nbsp;automatically provides server-side handling of non-existent images.
+                Using&nbsp;ImageKit’s&nbsp;URL-based transformations, you can specify the default image that should be
+                delivered, if the original image does not exist, with the original image URL itself. To give an
+                example,&lt;!-- The non-existent image URL --&gt;
+                &lt;img src="https://ik.imagekit.io/demo/img/non_existent_image.jpg" /&gt;
+
+                &lt;!-- Specifying the default image to be displayed in the URL --&gt;
+                &lt;img src="https://ik.imagekit.io/demo/img/tr:di-medium_cafe_B1iTdD0C.jpg/non_existent_image.jpg"
+                /&gt;
+                The default image is specified using the&nbsp;di-&nbsp;parameter in the URL. In this case, the default
+                image is from a cafe.Deliver a default image, the one on the right, instead of the broken image, the one
+                on the left.Being a URL-transformation, this gives you the flexibility to specify a different default
+                image for different kinds of images without having to write any code to handle the error cases. You can
+                read more about&nbsp;handling of non-existent images or default images using ImageKit
+                here.Considerations for image caching in error casesDefault images sent instead of a non-existent image
+                should not be cached at all or if it is cached, then the cache duration should be small, preferably a
+                few hours. This leaves an opportunity for the non-existent image to be “fixed” or made available. When
+                this happens, then the correct image would start getting delivered to the users automatically. However
+                if the image is not expected to be fixed, then the cache duration can be longer.Considerations for
+                response code in error casesIf you wish to handle the error case in your application, then the image
+                request should be returned with a 404 status code for the&nbsp;onerror&nbsp;to work. If you are
+                delivering the default image instead of a broken image from the server, then the response code can be
+                302 Temporarily Moved (ideally to prevent caching on intermediate layers like CDN but handling with
+                success and error handlers in application is impaired) or 200 OK (caching on intermediate layers can be
+                controlled with caching headers)</p>
+              <div class="userDetail">
+                <div class="lieksContainer"><img src="../../../src/asset/likes.svg"><span>1</span></div>
+                <div>Francis</div>
+              </div>
+            </div>
+            <div class="NewsContainer__img">
+              <img
+                src="https://images.unsplash.com/photo-1598024055266-e772a5f8c128?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cmVhZGluZ3xlbnwwfHwwfHw%3D&amp;ixlib=rb-1.2.1&amp;w=1000&amp;q=80">
+            </div>
+          </div>
+
+
+
+
         </section>
         <section id="myStory"></section>
       </div>

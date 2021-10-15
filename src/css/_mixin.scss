@@ -6,26 +6,27 @@
 }
 //width less than 1441px
 @mixin smallDesktop {
-	@media screen and (max-width: 1441px) {
+	@media screen and (max-width: 1440px) {
 		@content;
 	}
 }
 
-//width less than 1024 and greater than 767
-@mixin laptop {
-	@media screen and(min-width: 767px) and (max-width: 1025px) {
+//width less than 1441px
+@mixin largePhone {
+	@media screen and(min-width: 610px) and (max-width: 1441px) {
 		@content;
 	}
 }
-//width less than 768px
-@mixin largePhone {
-	@media screen and(max-width: 769px) {
+
+//在426和611之间
+@mixin mediumPhone {
+	@media screen and(min-width: 460px) and (max-width: 611px) {
 		@content;
 	}
 }
 
 @mixin m-phone {
-	@media screen and(max-width: 426px) {
+	@media screen and(max-width: 461px) {
 		@content;
 	}
 }

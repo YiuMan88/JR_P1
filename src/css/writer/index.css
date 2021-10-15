@@ -25,7 +25,7 @@ a {
   position: relative;
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 461px) {
   .editor__back {
     display: none;
   }
@@ -53,7 +53,7 @@ a {
       flex-basis: 80%;
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 461px) {
   .editor__form {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;

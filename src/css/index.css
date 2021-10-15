@@ -4,13 +4,13 @@ html {
 
 @media screen and (min-width: 1440px) {
   html {
-    font-size: 20px;
+    font-size: 14px;
   }
 }
 
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 1440px) {
   html {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
@@ -87,7 +87,13 @@ a {
   height: 100%;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (min-width: 460px) and (max-width: 611px) {
+  .header__menu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 461px) {
   .header__menu {
     display: block;
   }
@@ -99,11 +105,29 @@ a {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 30%;
+  width: 50%;
   cursor: pointer;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (min-width: 460px) and (max-width: 611px) {
+  .header__nav {
+    position: absolute;
+    text-align: center;
+    top: 81px;
+    right: 30px;
+    background-color: #f9f9f9;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90px;
+    z-index: 1000;
+    display: none;
+    padding: 0 10px 20px 10px;
+  }
+}
+
+@media screen and (max-width: 461px) {
   .header__nav {
     position: absolute;
     text-align: center;
@@ -125,7 +149,7 @@ a {
   color: #ea6f5a;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (min-width: 460px) and (max-width: 611px) {
   .header__nav .item {
     padding: 0;
     text-align: center;
@@ -145,7 +169,6 @@ a {
 }
 
 .NewsBody {
-  padding-top: 30px;
   width: 60%;
   margin: 0 auto;
   display: -webkit-box;
@@ -157,22 +180,26 @@ a {
           flex-direction: row;
 }
 
-@media screen and (min-width: 767px) and (max-width: 1025px) {
+@media screen and (min-width: 610px) and (max-width: 1441px) {
   .NewsBody {
     width: 90%;
   }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (min-width: 460px) and (max-width: 611px) {
   .NewsBody {
-    padding-top: 0;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 461px) {
+  .NewsBody {
     width: 90%;
   }
 }
 
 .NewsBody__left {
-  -ms-flex-preferred-size: 70%;
-      flex-basis: 70%;
+  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,16 +211,10 @@ a {
   position: relative;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 461px) {
   .NewsBody__left {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-  }
-}
-
-@media screen and (max-width: 426px) {
-  .NewsBody__left {
-    margin-right: 0;
+    margin: 0 auto;
+    width: 100%;
   }
 }
 
@@ -238,22 +259,16 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   padding: 25px 0;
-}
-
-@media screen and (max-width: 426px) {
-  .NewsBody__left .story .NewsContainer {
-    height: 100px;
-  }
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .NewsBody__left .story .NewsContainer__info {
   position: relative;
-  width: 100%;
   padding-right: 30px;
+  width: 60%;
 }
 
 .NewsBody__left .story .NewsContainer__info .userDetail {
@@ -276,12 +291,6 @@ a {
   margin-top: 4px;
   height: 18px;
   width: 18px;
-}
-
-@media screen and (max-width: 426px) {
-  .NewsBody__left .story .NewsContainer__info .userDetail img {
-    margin-top: -2px;
-  }
 }
 
 .NewsBody__left .story .NewsContainer__info .userDetail:not(:first-child) {
@@ -312,15 +321,9 @@ a {
 .NewsBody__left .story .NewsContainer__img {
   border-radius: 10px;
   overflow: hidden;
-  background-color: #333;
+  background-color: #ad7373;
   width: 40%;
   text-align: center;
-}
-
-@media screen and (max-width: 426px) {
-  .NewsBody__left .story .NewsContainer__img {
-    width: 58%;
-  }
 }
 
 .NewsBody__left .story .NewsContainer__img img {
@@ -329,11 +332,10 @@ a {
 }
 
 .NewsBody__right {
-  -ms-flex-preferred-size: 30%;
-      flex-basis: 30%;
+  width: 30%;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 461px) {
   .NewsBody__right {
     display: none;
   }
@@ -375,13 +377,6 @@ a {
   width: 60px;
   border-radius: 50%;
   overflow: hidden;
-}
-
-@media screen and (max-width: 769px) {
-  .NewsBody__right .trending__body .author__aviator {
-    height: 30px;
-    width: 30px;
-  }
 }
 
 .NewsBody__right .trending__body .author__aviator img {
