@@ -28,8 +28,8 @@ class User_Model {
 
 	//register
 	register(userInfor) {
-		const { username, password } = userInfor
-		return this.db.query('call register(?, ?,@par3);', [username, password])
+		const { username, password, penname } = userInfor
+		return this.db.query('call register(?,?,?,@par3);', [username, password, penname])
 	}
 }
 

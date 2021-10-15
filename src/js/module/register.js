@@ -3,7 +3,8 @@ import isEmpty from 'lodash/isEmpty'
 export default class Register {
 	constructor(el) {
 		this.username = el.querySelectorAll('input')[0]
-		this.password = el.querySelectorAll('input')[1]
+		this.penname = el.querySelectorAll('input')[1]
+		this.password = el.querySelectorAll('input')[2]
 		this.btn = el.querySelectorAll('button')[0]
 	}
 	init() {
@@ -16,10 +17,12 @@ export default class Register {
 	async onclick() {
 		const userInfor = {
 			username: this.username.value,
-			password: this.password.value
+			password: this.password.value,
+			penname: this.penname.value
 		}
-		if (isEmpty(userInfor.username) || isEmpty(userInfor.password)) {
-			return alert('username and password required')
+
+		if (isEmpty(userInfor.username) || isEmpty(userInfor.password) || isEmpty(userInfor.penname)) {
+			return alert('username,password and penname are required')
 		}
 		const { data } = await this.registerCheck({
 			...userInfor

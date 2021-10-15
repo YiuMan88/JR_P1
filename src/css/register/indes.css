@@ -42,7 +42,7 @@ body {
   }
 }
 
-.registerForm__userinput, .registerForm__passwordinput {
+.registerForm__userinput, .registerForm__passwordinput, .registerForm__nicenameinput {
   font-size: 1rem;
   padding: 20px 10px;
   border-radius: 4px 4px 0 0;

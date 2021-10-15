@@ -32,7 +32,7 @@ const storyElement = data => {
 		likesIcon.src = '../../../src/asset/likes.svg'
 
 		let likesAmt = document.createElement('span')
-		likesAmt.innerHTML = likes
+		likesAmt.innerHTML = likes || 0
 
 		let likesContainer = document.createElement('div')
 		likesContainer.className = 'lieksContainer'

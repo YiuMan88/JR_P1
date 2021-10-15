@@ -16,12 +16,12 @@ const createToken = id => {
 }
 
 const user_register = async (req, res) => {
-	let { username, password } = req.body.registerDetail
+	let { username, password, penname } = req.body.registerDetail
 	const saltRounds = 2
 	const salt = await bcrypt.genSalt(saltRounds)
 	password = await bcrypt.hash(password, salt)
 	try {
-		const result = await User_Model.register({ username, password })
+		const result = await User_Model.register({ username, password, penname })
 		const userId = result.result[0][0]['max_id']
 		const token = createToken(userId)
 		res.status(200).json({ status: true, userId, token })

@@ -47,3 +47,14 @@ export const postStory = async storydata => {
 		}
 	})
 }
+
+export const likeStory = async (userid, storyid, isLike) => {
+	console.log(userid, storyid, isLike)
+	const result = axios.put('http://localhost:3001/api/list/likes', { userid, storyid, isLike })
+	return result
+}
+
+export const checkIsLike = async (userid, storyid) => {
+	const result = axios.get(`http://localhost:3001/api/list/likes/${userid}/${storyid}`)
+	return result
+}
