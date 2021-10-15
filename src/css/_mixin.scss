@@ -1,32 +1,56 @@
-//width over 1440px
-@mixin largeDesktop {
+// //width over 1440px
+// @mixin largeDesktop {
+// 	@media screen and (min-width: 1440px) {
+// 		@content;
+// 	}
+// }
+// //width less than 1441px
+// @mixin smallDesktop {
+// 	@media screen and (min-width: 610px) and(max-width: 1441px) {
+// 		@content;
+// 	}
+// }
+
+// //width less than 1441px
+// // @mixin largePhone {
+// // 	@media screen and(min-width: 610px) and (max-width: 1441px) {
+// // 		@content;
+// // 	}
+// // }
+
+// //在426和611之间
+// @mixin mediumPhone {
+// 	@media screen and(min-width: 460px) and (max-width: 611px) {
+// 		@content;
+// 	}
+// }
+
+// @mixin m-phone {
+// 	@media screen and(max-width: 461px) {
+// 		@content;
+// 	}
+// }
+
+@mixin LargeDestop {
 	@media screen and (min-width: 1440px) {
 		@content;
 	}
 }
-//width less than 1441px
+
+@mixin mediumDesktop {
+	@media screen and (min-width: 1072px) and (max-width: 1441px) {
+		@content;
+	}
+}
+
 @mixin smallDesktop {
-	@media screen and (max-width: 1440px) {
+	@media screen and (min-width: 768px) and (max-width: 1073px) {
 		@content;
 	}
 }
 
-//width less than 1441px
-@mixin largePhone {
-	@media screen and(min-width: 610px) and (max-width: 1441px) {
-		@content;
-	}
-}
-
-//在426和611之间
-@mixin mediumPhone {
-	@media screen and(min-width: 460px) and (max-width: 611px) {
-		@content;
-	}
-}
-
-@mixin m-phone {
-	@media screen and(max-width: 461px) {
+@mixin largeTablet {
+	@media screen and (max-width: 769px) {
 		@content;
 	}
 }
