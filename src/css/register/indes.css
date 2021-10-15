@@ -2,12 +2,6 @@ html {
   font-size: 15px;
 }
 
-@media screen and (min-width: 610px) and (max-width: 1441px) {
-  html {
-    font-size: 5px;
-  }
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -34,12 +28,6 @@ body {
   border-radius: 5px;
   -webkit-box-shadow: 0 0 8px #e9e6e6;
           box-shadow: 0 0 8px #e9e6e6;
-}
-
-@media screen and (min-width: 610px) and (max-width: 1441px) {
-  .registerForm {
-    width: 60%;
-  }
 }
 
 .registerForm__userinput, .registerForm__passwordinput, .registerForm__nicenameinput {
