@@ -2,13 +2,10 @@
 $font-color: #ea6f5a;
 $text-color: #b4b4b4;
 html {
-	font-size: 16px;
-	// @include largeDesktop {
-	// 	font-size: 14px;
-	// }
-	// @include smallDesktop {
-	// 	font-size: 12px;
-	// }
+	font-size: 12px;
+	@include LargeDestop {
+		font-size: 14px;
+	}
 }
 body {
 	padding: 0;
@@ -127,6 +124,7 @@ a {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: row;
+	margin-top: 30px;
 	@include LargeDestop {
 		width: 70%;
 	}
