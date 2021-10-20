@@ -1,0 +1,262 @@
+@import '../../css/mixin';
+
+$font-color: #ea6f5a;
+$text-color: #b4b4b4;
+
+.header {
+	background-color: #fff;
+	display: flex;
+	height: 50px;
+	line-height: 50px;
+	justify-content: space-between;
+	border-bottom: 1px solid #f5efef;
+	color: #969696;
+	position: relative;
+	&__logo {
+		cursor: pointer;
+		text-align: center;
+		margin-left: 5%;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__menu {
+		display: none;
+		height: 30px;
+		width: 30px;
+		margin-right: 15px;
+		margin-top: 12px;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+		@include largeTablet {
+			display: block;
+		}
+	}
+	&__nav {
+		display: flex;
+		justify-content: space-around;
+		width: 30%;
+		@include largeTablet {
+			position: absolute;
+			text-align: center;
+			top: 81px;
+			right: 0px;
+			background-color: #f9f9f9;
+			flex-direction: column;
+			width: 90px; //todo
+			z-index: 1000;
+			display: none;
+			padding: 0 10px 20px 10px;
+		}
+	}
+	&__item {
+		cursor: pointer;
+		line-height: 20px;
+		border-radius: 25px;
+		padding: 3px 10px;
+		margin: 10px 0;
+		&--register {
+			border: 1px solid $font-color;
+			border-radius: 25px;
+			color: $font-color;
+		}
+		&--write {
+			padding: 5px 15px;
+			line-height: 20px;
+			background-color: $font-color;
+			color: white;
+		}
+	}
+}
+
+.content {
+	padding-top: 40px;
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	@include LargeDestop {
+		width: 60%;
+	}
+	@include smallDesktop {
+		width: 90%;
+		padding-top: 20px;
+	}
+	@include largeTablet {
+		width: 93%;
+		padding-top: 0;
+	}
+
+	&__postlist {
+		width: 70%;
+		display: flex;
+		flex-direction: column;
+		margin-right: 50px;
+		position: relative;
+		@include largeTablet {
+			width: 100%;
+			margin-right: 0;
+		}
+	}
+	&__tab {
+		width: 100%;
+		height: 60px;
+		line-height: 60px;
+		border-bottom: 1px solid #f5efef;
+		font-weight: 600;
+		color: $text-color;
+		display: flex;
+		&__item {
+			cursor: pointer;
+			margin-right: 15px;
+			height: 100%;
+			display: block;
+			&:hover {
+				border-bottom: 2px solid #333;
+			}
+		}
+	}
+	&__pannel {
+		width: 100%;
+		&__section {
+			display: none;
+			&--show {
+				display: block;
+			}
+		}
+	}
+
+	&__ranking {
+		box-sizing: border-box;
+		box-shadow: 0 2px 3px rgb(231, 229, 229);
+		width: 20%;
+		@include largeTablet {
+			display: none;
+		}
+
+		.advertising {
+			margin-top: 60px;
+			width: 100%;
+			img {
+				width: 100%;
+			}
+		}
+	}
+	&__list {
+		border-bottom: 1px solid #f5efef;
+		width: 100%;
+		display: flex;
+		padding: 25px 0;
+		justify-content: flex-start;
+		min-height: 130px;
+		max-height: 160px;
+		cursor: pointer;
+		@include smallTablet {
+			min-height: 110px;
+		}
+		&__textdetail {
+			width: 70%;
+			position: relative;
+			box-sizing: border-box;
+			padding-right: 20px;
+			h3 {
+				color: black;
+				margin-bottom: 20px;
+				@include textWrapper(1);
+			}
+			p {
+				margin-top: -3px;
+				@include textWrapper(3);
+				color: $text-color;
+			}
+		}
+		&__userdetail {
+			display: flex;
+			position: absolute;
+			bottom: 10px;
+			color: $text-color;
+		}
+		&__img {
+			box-sizing: border-box;
+			width: 30%;
+			img {
+				border-radius: 16px;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		&__likeicon {
+			display: flex;
+			height: 16px;
+			width: 16px;
+			margin-right: 20px;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	&__trending {
+		&__title {
+			height: 40px;
+			background-image: url('../../asset/banner.jpg');
+			background-repeat: no-repeat, repeat;
+			background-position: center;
+			background-size: cover;
+			margin-bottom: 20px;
+			text-align: center;
+			line-height: 50px;
+			color: #fff;
+			font-weight: 600;
+		}
+		&__body {
+			display: flex;
+			flex-direction: column;
+			padding-left: 20px;
+		}
+		&__author {
+			width: 100%;
+			display: flex;
+			margin-bottom: 25px;
+			// &__aviator {
+			// 	height: 30px;
+			// 	width: 30px;
+			// 	border-radius: 50%;
+			// 	overflow: hidden;
+			// 	img {
+			// 		width: 100%;
+			// 		height: 100%;
+			// 	}
+			// }
+			// &__details {
+			// 	margin-left: 20px;
+			// 	.name {
+			// 		font-size: 1.2rem;
+			// 	}
+			// 	.totalLikes {
+			// 		color: $text-color;
+			// 	}
+			// }
+		}
+		&__aviator {
+			height: 30px;
+			width: 30px;
+			border-radius: 50%;
+			overflow: hidden;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		&__userdetails {
+			margin-left: 20px;
+			span {
+				display: block;
+			}
+		}
+	}
+}

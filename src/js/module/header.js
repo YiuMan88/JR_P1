@@ -3,15 +3,16 @@ export default class Header {
 	constructor(el, jwt) {
 		this.nav = el.getElementsByClassName('header__nav')[0]
 		this.menu = el.getElementsByClassName('header__menu')[0]
-		this.item = el.getElementsByClassName('item')
-		this.login = el.getElementsByClassName('item')[1]
-		this.register = el.getElementsByClassName('item')[2]
-		this.write = el.getElementsByClassName('item')[3]
+		this.item = el.getElementsByClassName('header__item ')
+		this.login = el.getElementsByClassName('header__item')[1]
+		this.register = el.getElementsByClassName('header__item')[2]
+		this.write = el.getElementsByClassName('header__item')[3]
 		this.jwt = jwt
 	}
 	init() {
 		this.blindEvent()
 		this.isLoginCheck(this.jwt)
+		console.log(this.menu)
 	}
 	blindEvent() {
 		if (this.menu) {
@@ -42,11 +43,20 @@ export default class Header {
 					window.location = '../../../dist/write.html'
 				}
 				break
+			case 'login':
+				window.location = '../../../dist/login.html'
+				break
+			case 'register':
+				window.location = '../../../dist/register.html'
+				break
+			case 'home':
+				window.location = '../../../dist/index.html'
+				break
 			default:
 		}
 	}
 	isLoginCheck(jwt = '') {
-		if (!(jwt == null || jwt.length <= 0)) {
+		if (!isEmpty(jwt)) {
 			this.login.style.display = 'none'
 			this.register.style.display = 'none'
 			this.createLoginElement()

@@ -5,115 +5,125 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="../src/css/index.css">
-  </link>
+  <title>book</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../src/css/homePage/index.css">
+  <link rel="stylesheet" type="text/css" href="../src/css/preset.css">
+
 </head>
 
 <body>
-  <header class="header">
+  <header class="header" id='header'>
     <div class="header__logo">
-      <img src="../src/asset/logo.svg" />
+      <img src="../src/asset/logo.svg" alt="logoImg" />
+    </div>
+    <div class="header__search">
     </div>
     <div class="header__menu">
-      <img src="../src/asset/openMenu.svg" />
+      <img src="../src/asset/openMenu.svg" alt="menuLogo" />
     </div>
-    <div class="header__nav">
-      <a class="item selected">Home</a>
-      <a href="./login.html" action="login" class="item login">Login</a>
-      <a href="./register.html" class="item btn register">Register</a>
-      <a action="write" class="item btn write">Write</a>
-    </div>
+    <ul class="header__nav">
+      <li class="header__item header__item--home" action="home">Home</li>
+      <li class="header__item header__item--login" action="login">Login</li>
+      <li class="header__item header__item--register" action="register">Register</li>
+      <li class="header__item header__item--write" action="write">Write</li>
+    </ul>
   </header>
-  <div class="NewsBody">
-    <div class="NewsBody__left">
-      <div class="tab">
-        <span class="tabItem">All storys</span>
-        <span class="tabItem">My storys</span>
+
+  <main class="content" id="content">
+    <!-- postlist board -->
+    <section class="content__postlist">
+      <div class="content__tab">
+        <span class="content__tab__item">All storys</span>
+        <span class="content__tab__item">My storys</span>
       </div>
-      <div class="story">
-        <section id="allStorys" class="display">
-        </section>
-        <section id="myStory"></section>
-      </div>
-    </div>
-    <div class="NewsBody__right">
-      <section class="trending">
-        <div class="trending__title">Top 5 authors</div>
-        <div class="trending__body">
+      <section class="content__pannel">
+        <article class="content__pannel__section--show" id="allStorys">
+        </article>
+        <article class="content__pannel__section" id="myStory">
+        </article>
+      </section>
+    </section>
 
-          <div class="author">
-            <div class="author__aviator">
-              <img src="../src/asset/aviator.svg">
+    <!-- ranking board -->
+    <aside class="content__ranking">
+      <section class="content__trending">
+        <span class="content__trending__title">Top 5 authors</span>
+        <div class="content__trending__body">
+
+          <div class="content__trending__author">
+            <div class="content__trending__aviator">
+              <img src="../src/asset/aviator.svg" alt="avaitorImg">
             </div>
-            <div class="author__details">
-              <div class="name">name</div>
-              <div class="totalLikes">
-                total likes
-              </div>
+            <div class="content__trending__userdetails">
+              <span>name</span>
+              <span>total likes</span>
             </div>
           </div>
 
 
-          <div class="author">
-            <div class="author__aviator">
-              <img src="../src/asset/aviator2.svg">
+          <div class="content__trending__author">
+            <div class="content__trending__aviator">
+              <img src="../src/asset/aviator.svg" alt="avaitorImg">
             </div>
-            <div class="author__details">
-              <div class="name">name</div>
-              <div class="totalLikes">
+            <div class="content__trending__userdetails">
+              <span>name</span>
+              <span>
                 total likes
-              </div>
+              </span>
             </div>
           </div>
 
-
-          <div class="author">
-            <div class="author__aviator">
-              <img src="../src/asset/aviator3.svg">
+          <div class="content__trending__author">
+            <div class="content__trending__aviator">
+              <img src="../src/asset/aviator.svg" alt="avaitorImg">
             </div>
-            <div class="author__details">
-              <div class="name">name</div>
-              <div class="totalLikes">
+            <div class="content__trending__userdetails">
+              <span>name</span>
+              <span>
                 total likes
-              </div>
+              </span>
             </div>
           </div>
 
-          <div class="author">
-            <div class="author__aviator">
-              <img src="../src/asset/aviator4.svg">
+          <div class="content__trending__author">
+            <div class="content__trending__aviator">
+              <img src="../src/asset/aviator.svg" alt="avaitorImg">
             </div>
-            <div class="author__details">
-              <div class="name">name</div>
-              <div class="totalLikes">
+            <div class="content__trending__userdetails">
+              <span>name</span>
+              <span>
                 total likes
-              </div>
+              </span>
             </div>
           </div>
 
-          <div class="author">
-            <div class="author__aviator">
-              <img src="../src/asset/aviator5.svg">
+          <div class="content__trending__author">
+            <div class="content__trending__aviator">
+              <img src="../src/asset/aviator.svg" alt="avaitorImg">
             </div>
-            <div class="author__details">
-              <div class="name">name</div>
-              <div class="totalLikes">
+            <div class="content__trending__userdetails">
+              <span>name</span>
+              <span>
                 total likes
-              </div>
+              </span>
             </div>
           </div>
-
-
 
 
         </div>
+
       </section>
+
+
       <div class="advertising">
         <img src="../src/asset/advertising.png" />
       </div>
-    </div>
-  </div>
+    </aside>
+
+  </main>
+
+
   <script type="text/javascript" src="./js/main.js"></script>
 </body>
 

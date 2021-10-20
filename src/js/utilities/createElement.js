@@ -8,58 +8,41 @@ const storyElement = data => {
 		const content = data[i]['content'].replace(/<[^>]+>/g, '')
 		const title = data[i]['title']
 
-		let newsWrapper = document.createElement('div')
-		newsWrapper.setAttribute('class', 'NewsContainer')
+		//wrapper
+		const contentList = $(
+			`<a href = '../../../dist/storyDetail.html?story_id=${storyId}' class = "content__list"></a>`
+		)
+		// left side content
+		const listDetail = $(`<div class = "content__list__textdetail"></div>`)
+		const listTitle = $(`<h3>${title}</h3>`)
+		const listParagraph = $(`<p>${content}</p>`)
+		//UserDetail
+		const listUserDetail = $(`<div class = "content__list__userdetail"></div>`)
+		const listLikeIconWrapper = $(`<div class = "content__list__likeicon"></div>`)
+		const listLikeIcon = $(`<img src = "../../../src/asset/likes.svg"/>`)
+		const listLikeAtm = $(`<span>${likes ? likes : 0}</span>`)
+		const listAuthor = $(`<span>${author}</span>`)
+		//right side content
+		const listImgWrapper = $(`<div class = "content__list__img"></div>`)
+		const listImg = $(
+			`<img src = "https://images.unsplash.com/photo-1598024055266-e772a5f8c128?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cmVhZGluZ3xlbnwwfHwwfHw%3D&amp;ixlib=rb-1.2.1&amp;w=1000&amp;q=80"/>`
+		)
 
-		let newsInfor = document.createElement('div')
-		newsInfor.setAttribute('class', 'NewsContainer__info')
+		//left side (listDetail)
+		$(listDetail).append(listTitle)
+		$(listDetail).append(listParagraph)
+		$(listDetail).append(listUserDetail)
+		$(listLikeIconWrapper).append(listLikeIcon)
+		$(listLikeIconWrapper).append(listLikeAtm)
+		$(listUserDetail).append(listLikeIconWrapper)
+		$(listUserDetail).append(listAuthor)
+		//left side img
+		$(listImgWrapper).append(listImg)
 
-		let inforTitle = document.createElement('div')
-		inforTitle.className = 'title'
-		inforTitle.innerHTML = title
-		inforTitle.addEventListener('click', () => {
-			window['filter'] = storyId
-			window.open(`../../../dist/storyDetail.html?story_id=${storyId}`)
-		})
-
-		let inforContent = document.createElement('p')
-		inforContent.innerHTML = content
-
-		let userDetail = document.createElement('div')
-		userDetail.setAttribute('class', 'userDetail')
-
-		let likesIcon = document.createElement('img')
-		likesIcon.src = '../../../src/asset/likes.svg'
-
-		let likesAmt = document.createElement('span')
-		likesAmt.innerHTML = likes || 0
-
-		let likesContainer = document.createElement('div')
-		likesContainer.className = 'lieksContainer'
-
-		let authorDiv = document.createElement('div')
-		authorDiv.innerHTML = author
-
-		let imgContainer = document.createElement('div')
-		imgContainer.setAttribute('class', 'NewsContainer__img')
-
-		let img = document.createElement('img')
-		img.src =
-			'https://images.unsplash.com/photo-1598024055266-e772a5f8c128?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cmVhZGluZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80'
-
-		newsWrapper.appendChild(newsInfor)
-		newsInfor.appendChild(inforTitle)
-		newsInfor.appendChild(inforContent)
-		newsInfor.appendChild(userDetail)
-
-		likesContainer.appendChild(likesIcon)
-		likesContainer.appendChild(likesAmt)
-
-		userDetail.appendChild(likesContainer)
-		userDetail.appendChild(authorDiv)
-		imgContainer.appendChild(img)
-		newsWrapper.appendChild(imgContainer)
-		allStoryDiv.push(newsWrapper)
+		//inser two parts into contentList
+		$(contentList).append(listDetail)
+		$(contentList).append(listImgWrapper)
+		allStoryDiv.push(contentList)
 	}
 
 	return allStoryDiv

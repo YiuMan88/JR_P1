@@ -6,24 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="../src/css/index.css">
+  <link rel="stylesheet" type="text/css" href="../src/css/homePage/index.css">
   <link rel="stylesheet" type="text/css" href="../src/css/storyDetail/storyDetail.css">
+  <link rel="stylesheet" type="text/css" href="../src/css/preset.css">
 </head>
 
 <body>
-  <header class="header">
+  <header class="header" id='header'>
     <div class="header__logo">
-      <img src="../src/asset/logo.svg" />
+      <img src="../src/asset/logo.svg" alt="logoImg" />
+    </div>
+    <div class="header__search">
     </div>
     <div class="header__menu">
-      <img src="../src/asset/openMenu.svg" />
+      <img src="../src/asset/openMenu.svg" alt="menuLogo" />
     </div>
-    <div class="header__nav">
-      <a class="item selected">Home</a>
-      <a href="./login.html" action="login" class="item login">Login</a>
-      <a href="./register.html" class="item btn register">Register</a>
-      <a action="write" class="item btn write">Write</a>
-    </div>
+    <ul class="header__nav">
+      <li class="header__item header__item--home" action="home">Home</li>
+      <li class="header__item header__item--login" action="login">Login</li>
+      <li class="header__item header__item--register" action="register">Register</li>
+      <li class="header__item header__item--write" action="write">Write</li>
+    </ul>
   </header>
   <section class="articleContainer">
 

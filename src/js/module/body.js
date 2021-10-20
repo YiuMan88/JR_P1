@@ -4,10 +4,10 @@ export default class Newbody {
 	constructor(el, allStoryData, userStoryData) {
 		this.listData = allStoryData
 		this.userStory = userStoryData
-		this.list = el.getElementsByClassName('NewsBody__left')[0]
-		this.storyPannel = this.list.getElementsByClassName('story')[0]
-		this.allStory = this.storyPannel.getElementsByTagName('section')[0]
-		this.myStory = this.storyPannel.getElementsByTagName('section')[1]
+		this.list = el.getElementsByClassName('content__postlist')[0]
+		this.storyPannel = this.list.getElementsByClassName('content__pannel')[0]
+		this.allStory = this.storyPannel.getElementsByTagName('article')[0]
+		this.myStory = this.storyPannel.getElementsByTagName('article')[1]
 	}
 	init() {
 		this.renderList()
@@ -23,19 +23,18 @@ export default class Newbody {
 	//All story pannel rendering
 	allStoryRendering(renderItems) {
 		for (let i = 0; i < renderItems.length; i++) {
-			this.allStory.appendChild(renderItems[i])
+			$(this.allStory).append(renderItems[i])
 		}
 	}
 
 	userStoryRendering(renderItems) {
 		const token = window.localStorage.getItem('JWT')
 		if (isEmpty(token)) {
-			const notLogin = document.createElement('div')
-			notLogin.innerHTML = 'please login to view ur own post'
-			this.myStory.appendChild(notLogin)
+			const reminder = $('<span>please login to view ur own post</span>')
+			$(this.myStory).append(reminder)
 		} else {
 			for (let i = 0; i < renderItems.length; i++) {
-				this.myStory.appendChild(renderItems[i])
+				$(this.myStory).append(renderItems[i])
 			}
 		}
 	}

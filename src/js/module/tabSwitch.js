@@ -1,9 +1,8 @@
 export default class TabSwitch {
 	constructor(el) {
-		this.name = 'tab'
-		this.tabGroup = el.getElementsByClassName('tabItem')
-		this.storyGroup = el.getElementsByClassName('story')[0]
-		this.section = this.storyGroup.querySelectorAll('section')
+		this.tabGroup = el.getElementsByClassName('content__tab__item')
+		this.storyGroup = el.getElementsByClassName('content__pannel')[0]
+		this.section = this.storyGroup.querySelectorAll('article')
 	}
 	init() {
 		this.bindEvent()
@@ -17,9 +16,10 @@ export default class TabSwitch {
 		this.storyBoardSwitch(e)
 	}
 	storyBoardSwitch(index) {
+		let className = 'content__pannel__section'
 		for (let i = 0; i < this.section.length; i++) {
-			this.section[i].className = ''
+			this.section[i].className = className
 		}
-		this.section[index].className = 'display'
+		this.section[index].className = `${className}--show`
 	}
 }

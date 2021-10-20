@@ -33,3 +33,19 @@
 		@content;
 	}
 }
+
+@mixin textWrapper($line) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $line;
+}
+
+%headerBtn {
+	line-height: 40px;
+	margin-top: 14px;
+	padding: 6px 30px;
+	border-radius: 25px;
+	height: 40px;
+}
