@@ -22,7 +22,6 @@ export default class Login {
 			...userInfor
 		})
 		const { status, userId, token } = data
-		console.log(status)
 
 		if (status) {
 			window.localStorage.setItem('JWT', token)

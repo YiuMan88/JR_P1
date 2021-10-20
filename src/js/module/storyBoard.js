@@ -36,7 +36,6 @@ export default class StoryBoard {
 		}
 	}
 	likesBtnRender() {
-		console.log(this.thumbBtnImg)
 		if (this.isLike) {
 			this.thumbBtn.style.background = '#ec7259'
 			this.thumbBtnImg.src = '../../../src/asset/likedWhite.svg'

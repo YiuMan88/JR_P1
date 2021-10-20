@@ -8,8 +8,6 @@ window.addEventListener('load', async () => {
 	const jwt = window.localStorage.getItem('JWT') || null
 	const allStoryData = await getListData()
 	const userStoryData = await getUserStory(userID)
-	console.log(userStoryData)
-	console.log(allStoryData)
 	const header = document.getElementsByClassName('header')[0]
 	const body = document.getElementsByClassName('content')[0]
 	const tabSwitch = document.getElementsByClassName('content__postlist')[0]

@@ -15,7 +15,6 @@ class Story {
 	//post new story
 	addStory(storyData) {
 		const { id, titleText, contentText } = storyData
-		console.log(id, titleText, contentText)
 		return this.db.query('call postNewStory(?,?,?);', [id, titleText, contentText])
 	}
 

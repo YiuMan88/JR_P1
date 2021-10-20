@@ -91,7 +91,7 @@ $text-color: #b4b4b4;
 	}
 
 	&__postlist {
-		width: 70%;
+		width: 65%;
 		display: flex;
 		flex-direction: column;
 		margin-right: 50px;
@@ -132,11 +132,10 @@ $text-color: #b4b4b4;
 	&__ranking {
 		box-sizing: border-box;
 		box-shadow: 0 2px 3px rgb(231, 229, 229);
-		width: 20%;
+		width: 25%;
 		@include largeTablet {
 			display: none;
 		}
-
 		.advertising {
 			margin-top: 60px;
 			width: 100%;
@@ -222,25 +221,6 @@ $text-color: #b4b4b4;
 			width: 100%;
 			display: flex;
 			margin-bottom: 25px;
-			// &__aviator {
-			// 	height: 30px;
-			// 	width: 30px;
-			// 	border-radius: 50%;
-			// 	overflow: hidden;
-			// 	img {
-			// 		width: 100%;
-			// 		height: 100%;
-			// 	}
-			// }
-			// &__details {
-			// 	margin-left: 20px;
-			// 	.name {
-			// 		font-size: 1.2rem;
-			// 	}
-			// 	.totalLikes {
-			// 		color: $text-color;
-			// 	}
-			// }
 		}
 		&__aviator {
 			height: 30px;

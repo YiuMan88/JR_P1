@@ -12,7 +12,6 @@ export default class Header {
 	init() {
 		this.blindEvent()
 		this.isLoginCheck(this.jwt)
-		console.log(this.menu)
 	}
 	blindEvent() {
 		if (this.menu) {
